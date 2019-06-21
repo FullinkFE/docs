@@ -5,7 +5,7 @@
 * docker-compose: 1.24.0
 * sentry:  [sentry 9.1-onbuild](https://hub.docker.com/_/sentry)
 
-1. 安装 `docker` 和 `docker-compose` 参考: [[Docker]]
+1. 安装 `docker` 和 `docker-compose`
 2. 如果没有启动 docker。 执行 `systemctl start docker` 启动 docker。 **可执行 `systemctl enable docker` 将启动 docker 加入开机自启**
 3. 执行 `sudo yum install git` 安装 git
 4. 执行 `git clone https://github.com/getsentry/onpremise.git` 克隆到主机
