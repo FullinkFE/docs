@@ -64,13 +64,21 @@ docker-compose.yml:
 ![](Sentry%20Docker%20%E6%90%AD%E5%BB%BA/23B4330D-A43B-4CE7-9FED-9C948293F2FD.png)
 
 
-解决方案: [Waiting for events… Our error robot is waiting to devour receive your first event - #sentry](https://forum.sentry.io/t/waiting-for-events-our-error-robot-is-waiting-to-devour-receive-your-first-event/4355)
-步骤：
-	1. 执行 `docker exec -it onpremise_postgres_1 bash` 进入docker容器 执行 **postgres bash** 命令查看是否有数据。
-	2. 执行 `psql -h 127.0.0.1 -d postgres -U postgres` 进入postgres数据库
-	3. 执行下面SQL 语句后。在浏览器中点击 Create a sample event 就好了，也正常记录Issue了。
+> 解决方案: [Waiting for events… Our error robot is waiting to devour receive your first event - #sentry](https://forum.sentry.io/t/waiting-for-events-our-error-robot-is-waiting-to-devour-receive-your-first-event/4355)
+
+1. 执行 `docker exec -it onpremise_postgres_1 bash` 进入docker容器 执行 **postgres bash** 命令查看是否有数据。
+2. 执行 `psql -h 127.0.0.1 -d postgres -U postgres` 进入postgres数据库
+3. 执行下面SQL 语句后。在浏览器中点击 Create a sample event 就好了，也正常记录Issue了。
+
 ```shell
-	create or replace function sentry_increment_project_counter( project bigint, delta int) returns int as $$ declare new_val int; begin loop update sentry_projectcounter set value = value + delta where project_id = project returning value into new_val; if found then return new_val; end if; begin insert into sentry_projectcounter(project_id, value) values (project, delta) returning value into new_val; return new_val; exception when unique_violation then end; end loop; end $$ language plpgsql;
+create or replace function sentry_increment_project_counter( project bigint, delta int) 
+returns int as $$ declare new_val int; 
+begin loop update sentry_projectcounter set value = value + delta where project_id = project returning value into new_val; 
+if found then return new_val; 
+end if; 
+begin insert into sentry_projectcounter(project_id, value) values (project, delta) returning value into new_val; 	 return new_val; 
+exception when unique_violation then end; end loop; 
+end $$ language plpgsql;
 ```
 
 #Docker  #Sentry
