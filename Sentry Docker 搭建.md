@@ -1,9 +1,9 @@
 # Sentry Docker 搭建
 ## 环境
-	* CentOS 7.5 64位
-	* docker: 18.09.6
-	* docker-compose: 1.24.0
-	* sentry:  [sentry 9.1-onbuild](https://hub.docker.com/_/sentry)
+* CentOS 7.5 64位
+* docker: 18.09.6
+* docker-compose: 1.24.0
+* sentry:  [sentry 9.1-onbuild](https://hub.docker.com/_/sentry)
 
 1. 安装 `docker` 和 `docker-compose` 参考: [[Docker]]
 2. 如果没有启动 docker。 执行 `systemctl start docker` 启动 docker。 **可执行 `systemctl enable docker` 将启动 docker 加入开机自启**
@@ -26,17 +26,18 @@ docker-compose.yml:
 
 ![](Sentry%20Docker%20%E6%90%AD%E5%BB%BA/0FBDC146-065F-4CA7-B937-7879659BA244.png)
 
-	1. 执行 `psql -h 127.0.0.1 -d postgres -U postgres` 进入postgres数据库
-	2. 执行 `select * from sentry_project;` 查看 sentry_project 表是否有数据。
-	3. 执行 `select * from sentry_organization;` 查看 sentry_organization 表是否有数据。
-	4. 执行 `ctrl + d` 退出shell。
+1. 执行 `psql -h 127.0.0.1 -d postgres -U postgres` 进入postgres数据库
+2. 执行 `select * from sentry_project;` 查看 sentry_project 表是否有数据。
+3. 执行 `select * from sentry_organization;` 查看 sentry_organization 表是否有数据。
+4. 执行 `ctrl + d` 退出shell。
 
 16. 如果没有数据需要添加， 执行 `docker-compose run --rm web shell` 进入sentry的web的shell里面。初始化数据
 
-	1. 执行 `from sentry.models import Project`
-	2. 执行 `from sentry.receivers.core import create_default_projects`
-	3. 执行 `create_default_projects([Project])`
-	4. 执行 `ctrl + d` 退出。
+1. 执行 `from sentry.models import Project`
+2. 执行 `from sentry.receivers.core import create_default_projects`
+3. 执行 `create_default_projects([Project])`
+4. 执行 `ctrl + d` 退出。
+
 ![](Sentry%20Docker%20%E6%90%AD%E5%BB%BA/FE84042A-3B84-4E53-9FDA-9BC719BAE93A.png)
 
 20. 执行 `docker-compose run --rm web createuser` 创建用户。
