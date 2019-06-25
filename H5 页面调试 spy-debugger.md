@@ -114,3 +114,10 @@ spy-debugger -c true
 
 
 [转载自https://github.com/wuchangming/spy-debugger](https://github.com/wuchangming/spy-debugger)
+
+
+其他调试
+-----------
+
+- [mobiledebug](https://www.mobiledebug.com/)
+- [eruda](https://github.com/liriliri/eruda)
