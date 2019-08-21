@@ -10,6 +10,7 @@
 ## 单功能组件
 * 引导页 [react-native-app-intro](https://github.com/FuYaoDe/react-native-app-intro) 
 * Swiper [react-native-snap-carousel](https://github.com/archriss/react-native-snap-carousel) 
+* Swiper [react-native-swiper](https://github.com/leecade/react-native-swiper)
 * (图片/视频) 单选/多选/裁剪等功能 [react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker) 
 * 图表库 [react-native-charts-wrapper](https://github.com/wuxudong/react-native-charts-wrapper) 
 * 毛玻璃效果 [react-native-blur](https://github.com/react-native-community/react-native-blur) 
@@ -28,7 +29,11 @@
 * 推送通知 [react-native-push-notification](https://github.com/zo0r/react-native-push-notification) 
 * svg [react-native-svg](https://github.com/react-native-community/react-native-svg) 
 * 出现键盘时候, 页面自适应布局 [react-native-keyboard-spacer](https://github.com/Andr3wHur5t/react-native-keyboard-spacer) 
-
+* 热更新 [react-native-code-push](https://github.com/microsoft/react-native-code-push)
+* toast [react-native-easy-toast](https://github.com/crazycodeboy/react-native-easy-toast)
+* 支持缓存的image组件 [react-native-fast-image](https://github.com/DylanVann/react-native-fast-image)
+* 相册图片选择器 [react-native-image-picker](https://github.com/react-native-community/react-native-image-picker)
+* 线性渐变 [react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient)
 
 #React-Native/组件
 
