@@ -34,6 +34,7 @@
 * 支持缓存的image组件 [react-native-fast-image](https://github.com/DylanVann/react-native-fast-image)
 * 相册图片选择器 [react-native-image-picker](https://github.com/react-native-community/react-native-image-picker)
 * 线性渐变 [react-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient)
+* 支持阴影设置的view [react-native-simple-shadow-view](#https://github.com/ConduitMobileRND/react-native-simple-shadow-view)
 
 #React-Native/组件
 
